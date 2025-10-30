@@ -87,19 +87,19 @@ void vigenereShiftPartOne(string s, string key) { // void function because i jus
 
 int main() {
     string encrypted = "EHOE YAVC EIME WEXK TNOL LSXS AROX PNCM ZNCA SADI GEBX ZOBM RIXE EEKR JTRM YGSX NAXH ZWRE EEFI CWOO YOGL ZWDS ZRNI CIDX ZPOV QOBQ TTME YFYP WOGE YAVC DICF FTSX SACR ZPYA PRYJ LNDM NIZE EIXK LNIE YAVC EIME WROP LTSS YSYV EREX SSSX DPBS GIXG PICX ZACW TSDY DIXQ LKSR RAFE TLKF WEGL LTGI LROE WROE OYKG BUKM YTOH HIDL EHOE YAVC EIME WEXK TNOA PAFI DAVK PBBE TCZE ETOV YSTY DTKW EHON LCAY LRNP ZOWA PAFI DFVS HEBW LNNP PAFI D";
-    // vigenereShiftPartOne(encrypted);
-    string keys[] = {"UTTER","DESCRIPTIVE","CARING","PIES","DRAWER","STATION","SOOTHE","YEAR","AGREEABLE","SEEMLY","BUTTON","ENCOURAGE","REDUCE","BED","WAVE","NOSY","ZOO","HATEFUL","FLAKY","WORK","EAR","UNEVEN","CUMBERSOME","LANGUID","BOX","DEVILISH","YAWN","ABLAZE","LAKE","HARBOR","LEGS","GLOW","GLOSSY","CRUEL","WARN","HARD","UNIQUE","CARD","HUG","TANGIBLE","HOOK","LABEL","EXOTIC","ACCOUNT","IMAGINE","GRAIN","TRANQUIL","BOOK","PICKLE","WHISTLE","SACK","SCISSORS","TRASHY","PUZZLED","BOTTLE","SMILE","NEIGHBORLY","EATABLE","ADMIT","PICAYUNE","TYPE","FAST","SHY","ANGER","OPEN","ADD","CURLY","FREE","AFTERMATH","CHERRY","DAILY","HEAL","ROSE","ABHORRENT","SHORT","FINE","GUARDED","VASE","FASCINATED","FRESH","CHICKENS","MINE","STARE"};
-    // AI used to put the keys into an array and all uppercase
-    for (string key : keys) {
-        /*
-            this is our brute for algorithm to test all the keys
-        */
-        cout << key << endl;
-        vigenereShiftPartOne(encrypted, key); 
-        cout << endl << endl << endl;
+    
+    vector<int> freqArray = populateFreqArray(encrypted);
+    for (int i = 0; i < 26; i++) {
+        cout << getCharFromIndex(i) << ": " << freqArray.at(i) << endl;
     }
-    // vector<int> vigenereFreq = populateFreqArray(vigenereShiftedString);
-
+    vigenereShiftPartOne(encrypted, "LAKE");
+    cout << endl;
+    cout << "Correct Key: Lake";
     return 0;
 }
+
+/*
+    decrypted message with proper spacing
+    THE ANALYTICAL ENGINE HAS NO PRETENSIONS WHATSOEVER TO ORIGINATE ANYTHING IT CAN DO WHATEVER WE KNOW HOW TO ORDER IT TO PERFORM IT CAN FOLLOW ANALYSIS BUT IT HAS NO POWER OF ANTICIPATING ANY ANALYTICAL RELATIONS OR TRUTHS ITS PROVINCE IS TO ASSIST US IN MAKING AVAILABLE WHAT WE ARE ALREADY ACQUAINTED WITH THE ANALYTICAL ENGINE WEAVES ALGEBRAIC PATTERNS JUST AS THE JACQUARD LOOM WEAVES FLOWERS AND LEAVES
+*/
 
